@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.exception;
+package net.hwyz.iov.cloud.edd.mpgw.exception;
 
 /**
  * 验证码错误异常类

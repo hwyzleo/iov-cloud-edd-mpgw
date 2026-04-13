@@ -1,6 +1,6 @@
-package net.hwyz.iov.cloud.mpt.gateway.config;
+package net.hwyz.iov.cloud.edd.mpgw.config;
 
-import net.hwyz.iov.cloud.mpt.gateway.handler.SentinelFallbackHandler;
+import net.hwyz.iov.cloud.edd.mpgw.handler.SentinelFallbackHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;

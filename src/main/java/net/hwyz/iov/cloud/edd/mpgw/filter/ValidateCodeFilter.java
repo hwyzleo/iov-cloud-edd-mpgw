@@ -1,11 +1,11 @@
-package net.hwyz.iov.cloud.mpt.gateway.filter;
+package net.hwyz.iov.cloud.edd.mpgw.filter;
 
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import net.hwyz.iov.cloud.framework.common.util.ServletUtil;
-import net.hwyz.iov.cloud.mpt.gateway.config.properties.CaptchaProperties;
-import net.hwyz.iov.cloud.mpt.gateway.service.ValidateCodeService;
+import net.hwyz.iov.cloud.edd.mpgw.config.properties.CaptchaProperties;
+import net.hwyz.iov.cloud.edd.mpgw.service.ValidateCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;

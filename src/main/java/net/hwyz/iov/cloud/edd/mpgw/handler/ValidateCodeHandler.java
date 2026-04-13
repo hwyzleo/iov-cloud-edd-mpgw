@@ -1,8 +1,8 @@
-package net.hwyz.iov.cloud.mpt.gateway.handler;
+package net.hwyz.iov.cloud.edd.mpgw.handler;
 
-import net.hwyz.iov.cloud.framework.common.web.domain.AjaxResult;
-import net.hwyz.iov.cloud.mpt.gateway.exception.CaptchaException;
-import net.hwyz.iov.cloud.mpt.gateway.service.ValidateCodeService;
+import net.hwyz.iov.cloud.framework.common.bean.AjaxResult;
+import net.hwyz.iov.cloud.edd.mpgw.exception.CaptchaException;
+import net.hwyz.iov.cloud.edd.mpgw.service.ValidateCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.filter;
+package net.hwyz.iov.cloud.edd.mpgw.filter;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

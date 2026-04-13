@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.service.impl;
+package net.hwyz.iov.cloud.edd.mpgw.service.impl;
 
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.IdUtil;
@@ -7,11 +7,11 @@ import com.google.code.kaptcha.Producer;
 import jakarta.annotation.Resource;
 import net.hwyz.iov.cloud.framework.common.constant.CacheConstants;
 import net.hwyz.iov.cloud.framework.common.constant.Constants;
-import net.hwyz.iov.cloud.framework.common.web.domain.AjaxResult;
+import net.hwyz.iov.cloud.framework.common.bean.AjaxResult;
 import net.hwyz.iov.cloud.framework.redis.service.RedisService;
-import net.hwyz.iov.cloud.mpt.gateway.config.properties.CaptchaProperties;
-import net.hwyz.iov.cloud.mpt.gateway.exception.CaptchaException;
-import net.hwyz.iov.cloud.mpt.gateway.service.ValidateCodeService;
+import net.hwyz.iov.cloud.edd.mpgw.config.properties.CaptchaProperties;
+import net.hwyz.iov.cloud.edd.mpgw.exception.CaptchaException;
+import net.hwyz.iov.cloud.edd.mpgw.service.ValidateCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FastByteArrayOutputStream;

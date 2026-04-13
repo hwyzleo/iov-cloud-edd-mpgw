@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.config.properties;
+package net.hwyz.iov.cloud.edd.mpgw.config.properties;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * XSS跨站脚本配置
+ * 放行白名单配置
  *
  * @author hwyz_leo
  */
@@ -18,15 +18,10 @@ import java.util.List;
 @Setter
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "security.xss")
-public class XssProperties {
+@ConfigurationProperties(prefix = "security.ignore")
+public class IgnoreWhiteProperties {
     /**
-     * Xss开关
+     * 放行白名单配置，网关不校验此处的白名单
      */
-    private Boolean enabled;
-
-    /**
-     * 排除路径
-     */
-    private List<String> excludeUrls = new ArrayList<>();
+    private List<String> whites = new ArrayList<>();
 }

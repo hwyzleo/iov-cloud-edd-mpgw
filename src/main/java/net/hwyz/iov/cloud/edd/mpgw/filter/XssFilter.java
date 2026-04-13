@@ -1,9 +1,9 @@
-package net.hwyz.iov.cloud.mpt.gateway.filter;
+package net.hwyz.iov.cloud.edd.mpgw.filter;
 
 import cn.hutool.core.util.StrUtil;
 import io.netty.buffer.ByteBufAllocator;
+import net.hwyz.iov.cloud.edd.mpgw.config.properties.XssProperties;
 import net.hwyz.iov.cloud.framework.common.util.EscapeUtil;
-import net.hwyz.iov.cloud.mpt.gateway.config.properties.XssProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -22,7 +22,7 @@ import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
 
-import static net.hwyz.iov.cloud.mpt.gateway.filter.AuthFilter.matches;
+import static net.hwyz.iov.cloud.edd.mpgw.filter.AuthFilter.matches;
 
 /**
  * 跨站脚本过滤器

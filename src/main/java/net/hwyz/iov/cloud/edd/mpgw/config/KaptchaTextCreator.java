@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.config;
+package net.hwyz.iov.cloud.edd.mpgw.config;
 
 import com.google.code.kaptcha.text.impl.DefaultTextCreator;
 

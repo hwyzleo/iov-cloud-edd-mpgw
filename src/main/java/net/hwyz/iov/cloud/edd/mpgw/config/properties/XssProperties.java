@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.config.properties;
+package net.hwyz.iov.cloud.edd.mpgw.config.properties;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,8 +6,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * 验证码配置
+ * XSS跨站脚本配置
  *
  * @author hwyz_leo
  */
@@ -15,15 +18,15 @@ import org.springframework.context.annotation.Configuration;
 @Setter
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "security.captcha")
-public class CaptchaProperties {
+@ConfigurationProperties(prefix = "security.xss")
+public class XssProperties {
     /**
-     * 验证码开关
+     * Xss开关
      */
     private Boolean enabled;
 
     /**
-     * 验证码类型（math 数组计算 char 字符）
+     * 排除路径
      */
-    private String type;
+    private List<String> excludeUrls = new ArrayList<>();
 }

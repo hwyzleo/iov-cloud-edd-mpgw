@@ -1,8 +1,8 @@
-package net.hwyz.iov.cloud.mpt.gateway.service;
+package net.hwyz.iov.cloud.edd.mpgw.service;
 
 
-import net.hwyz.iov.cloud.framework.common.web.domain.AjaxResult;
-import net.hwyz.iov.cloud.mpt.gateway.exception.CaptchaException;
+import net.hwyz.iov.cloud.framework.common.bean.AjaxResult;
+import net.hwyz.iov.cloud.edd.mpgw.exception.CaptchaException;
 
 import java.io.IOException;
 

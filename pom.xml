@@ -10,8 +10,8 @@
         <relativePath/>
     </parent>
 
-    <groupId>net.hwyz.iov.cloud.mpt</groupId>
-    <artifactId>gateway</artifactId>
+    <groupId>net.hwyz.iov.edd.mpgw</groupId>
+    <artifactId>edd-mpgw</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>管理后台网关</description>
 
@@ -60,7 +60,7 @@
         <!-- 框架: 通用 -->
         <dependency>
             <groupId>net.hwyz.iov.cloud.framework</groupId>
-            <artifactId>framework-common-starter</artifactId>
+            <artifactId>framework-common</artifactId>
         </dependency>
 
         <!-- 框架: Redis -->
@@ -79,15 +79,6 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-        </dependency>
-
-        <!-- 解决MacOS上无法使用DNS的问题 -->
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-resolver-dns-native-macos</artifactId>
-            <classifier>osx-aarch_64</classifier>
-            <version>4.1.115.Final</version>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
@@ -108,31 +99,5 @@
             </plugin>
         </plugins>
     </build>
-
-    <repositories>
-        <repository>
-            <id>maven-snapshots</id>
-            <url>http://nexus-internal.rox-motor.com:8081/repository/maven-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>maven-snapshots</id>
-            <url>http://nexus-internal.rox-motor.com:8081/repository/maven-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
 </project>

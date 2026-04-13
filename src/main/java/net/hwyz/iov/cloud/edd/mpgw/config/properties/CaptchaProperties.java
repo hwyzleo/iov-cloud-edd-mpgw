@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.config.properties;
+package net.hwyz.iov.cloud.edd.mpgw.config.properties;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,11 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * 放行白名单配置
+ * 验证码配置
  *
  * @author hwyz_leo
  */
@@ -18,10 +15,15 @@ import java.util.List;
 @Setter
 @RefreshScope
 @Configuration
-@ConfigurationProperties(prefix = "security.ignore")
-public class IgnoreWhiteProperties {
+@ConfigurationProperties(prefix = "security.captcha")
+public class CaptchaProperties {
     /**
-     * 放行白名单配置，网关不校验此处的白名单
+     * 验证码开关
      */
-    private List<String> whites = new ArrayList<>();
+    private Boolean enabled;
+
+    /**
+     * 验证码类型（math 数组计算 char 字符）
+     */
+    private String type;
 }

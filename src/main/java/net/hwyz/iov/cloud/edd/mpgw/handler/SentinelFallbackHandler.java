@@ -1,4 +1,4 @@
-package net.hwyz.iov.cloud.mpt.gateway.handler;
+package net.hwyz.iov.cloud.edd.mpgw.handler;
 
 import com.alibaba.csp.sentinel.adapter.gateway.sc.callback.GatewayCallbackManager;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
