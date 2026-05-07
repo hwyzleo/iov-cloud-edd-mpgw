@@ -5,8 +5,10 @@ import io.jsonwebtoken.Claims;
 import net.hwyz.iov.cloud.edd.mpgw.config.properties.IgnoreWhiteProperties;
 import net.hwyz.iov.cloud.edd.mpgw.exception.MpgwErrorCode;
 import net.hwyz.iov.cloud.framework.common.constant.CacheConstants;
+import net.hwyz.iov.cloud.framework.common.constant.CustomHeaders;
 import net.hwyz.iov.cloud.framework.common.constant.SecurityConstants;
 import net.hwyz.iov.cloud.framework.common.constant.TokenConstants;
+import net.hwyz.iov.cloud.framework.common.enums.ClientType;
 import net.hwyz.iov.cloud.framework.common.util.JwtUtil;
 import net.hwyz.iov.cloud.framework.common.util.ServletUtil;
 import net.hwyz.iov.cloud.framework.redis.service.RedisService;
@@ -73,11 +75,12 @@ public class AuthFilter implements GlobalFilter, Ordered {
         }
 
         // 设置用户信息到请求
-        addHeader(mutate, SecurityConstants.USER_KEY, userkey);
-        addHeader(mutate, SecurityConstants.USER_ID, userid);
-        addHeader(mutate, SecurityConstants.USERNAME, username);
+        addHeader(mutate, CustomHeaders.USER_KEY, userkey);
+        addHeader(mutate, CustomHeaders.USER_ID, userid);
+        addHeader(mutate, CustomHeaders.USERNAME, username);
+        addHeader(mutate, CustomHeaders.CLIENT_TYPE, ClientType.MPT.name());
         // 内部请求来源参数清除
-        removeHeader(mutate, SecurityConstants.FROM_SOURCE);
+        removeHeader(mutate, CustomHeaders.FROM_SOURCE);
         return chain.filter(exchange.mutate().request(mutate.build()).build());
     }
 
