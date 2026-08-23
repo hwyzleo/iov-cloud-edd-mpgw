@@ -2,6 +2,7 @@ package net.hwyz.iov.cloud.edd.mpgw.filter;
 
 import cn.hutool.core.util.StrUtil;
 import io.jsonwebtoken.Claims;
+import lombok.extern.slf4j.Slf4j;
 import net.hwyz.iov.cloud.edd.mpgw.config.properties.IgnoreWhiteProperties;
 import net.hwyz.iov.cloud.edd.mpgw.exception.MpgwErrorCode;
 import net.hwyz.iov.cloud.framework.common.constant.CacheConstants;
@@ -12,8 +13,6 @@ import net.hwyz.iov.cloud.framework.common.enums.ClientType;
 import net.hwyz.iov.cloud.framework.common.util.JwtUtil;
 import net.hwyz.iov.cloud.framework.common.util.ServletUtil;
 import net.hwyz.iov.cloud.framework.redis.service.RedisService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -33,9 +32,9 @@ import java.util.List;
  *
  * @author hwyz_leo
  */
+@Slf4j
 @Component
 public class AuthFilter implements GlobalFilter, Ordered {
-    private static final Logger log = LoggerFactory.getLogger(AuthFilter.class);
 
     // 排除过滤的 uri 地址，nacos自行添加
     @Autowired
