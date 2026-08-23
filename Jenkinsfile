@@ -16,7 +16,7 @@ pipeline {
         // 构建文件
         MAVEN_SETTINGS = '/var/jenkins_home/.m2/settings.xml'
         MAVEN_ARCHIVE  = '/var/jenkins_home/apache-maven-3.6.3-bin.tar.gz'
-        DOCKERFILE     = '../DockerfileCaptcha'
+        DOCKERFILE     = '../GwDockerfile'
         BUILD_CONTEXT  = '.'
 
         // Docker/TCR
