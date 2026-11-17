@@ -36,6 +36,16 @@ import java.util.List;
 @Component
 public class AuthFilter implements GlobalFilter, Ordered {
 
+    /**
+     * 认证入口固定放行路径（SEC-EIAM-DSN-CR-002）：登录与 OIDC 授权端点必须在未登录时可达，
+     * 不依赖 Nacos `security.ignore.whites` 逐环境配置，避免单点登录因白名单缺失被网关拦截。
+     */
+    private static final List<String> AUTH_PUBLIC_PATHS = List.of(
+            "/auth/login",
+            "/auth/oauth2/authorize",
+            "/auth/oauth2/login",
+            "/auth/oauth2/token");
+
     // 排除过滤的 uri 地址，nacos自行添加
     @Autowired
     private IgnoreWhiteProperties ignoreWhite;
@@ -50,8 +60,8 @@ public class AuthFilter implements GlobalFilter, Ordered {
         ServerHttpRequest.Builder mutate = request.mutate();
 
         String url = request.getURI().getPath();
-        // 跳过不需要验证的路径
-        if (matches(url, ignoreWhite.getWhites())) {
+        // 跳过不需要验证的路径（Nacos 白名单 + 认证入口固定放行）
+        if (matches(url, ignoreWhite.getWhites()) || matches(url, AUTH_PUBLIC_PATHS)) {
             return chain.filter(exchange);
         }
         String token = getToken(request);
